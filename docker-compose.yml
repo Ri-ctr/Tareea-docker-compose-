@@ -1,0 +1,17 @@
+services:
+  datascience:
+    image: ricardoctrl/imagenricardo
+    ports:
+      - "8889:8888"
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+    command: jupyter lab --NotebookApp.token='' --NotebookApp.password=''
+
+
+  spark:
+    image: quay.io/jupyter/pyspark-notebook
+    ports:
+      - "8887:8888"   # Fixed the quotes here
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+    command: jupyter lab --NotebookApp.token='' --NotebookApp.password=''
